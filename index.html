@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+.card {
+  background: rgba(0,0,0,0.35);
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  animation: fadeIn 1.5s ease;
+}
+
+h1 {
+  font-size: 2.3rem;
+  margin-bottom: 25px;
+}
+
+button {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.yes {
+  background: #4caf50;
+  color: white;
+}
+
+.no {
+  background: #f44336;
+  color: white;
+}
+
+.shake {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-8px); }
+  100% { transform: translateX(0); }
+}
+
+.teddy {
+  font-size: 6rem;
+  position: absolute;
+  left: -120vw;
+  bottom: 50px;
+  animation: runIn 2.5s forwards;
+}
+
+.banner {
+  background: white;
+  color: #ff4d6d;
+  padding: 8px 18px;
+  border-radius: 15px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+@keyframes runIn {
+  to { left: 50%; transform: translateX(-50%); }
+}
+
+.hug {
+  animation: hug 1s infinite;
+}
+
+@keyframes hug {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.float {
+  position: absolute;
+  top: -50px;
+  font-size: 2rem;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div id="card" class="card">
+  <h1>Will you be my Valentine? ❤️</h1>
+  <button class="yes" onclick="yesClicked()">YES</button>
+  <button class="no" onclick="noClicked()">NO</button>
+</div>
+
+<script>
+function noClicked() {
+  const card = document.getElementById("card");
+  card.classList.add("shake");
+  setTimeout(() => card.classList.remove("shake"), 400);
+
+  if (!document.getElementById("teddyNo")) {
+    const teddy = document.createElement("div");
+    teddy.id = "teddyNo";
+    teddy.className = "teddy";
+    teddy.innerHTML = "🧸<div class='banner'>Wrong Answer</div>";
+    document.body.appendChild(teddy);
+  }
+}
+
+function yesClicked() {
+  document.getElementById("card").innerHTML =
+    "<h1>Yay! Thanks my love ❤️</h1>";
+
+  // Balloons + Flowers
+  const items = ["🎈","🌸","🌹","🌷","💖"];
+  for (let i = 0; i < 40; i++) {
+    const span = document.createElement("span");
+    span.className = "float";
+    span.innerText = items[Math.floor(Math.random()*items.length)];
+    span.style.left = Math.random() * 100 + "vw";
+    span.style.animationDuration = 4 + Math.random()*4 + "s";
+    document.body.appendChild(span);
+  }
+
+  // Hugging Teddy
+  setTimeout(() => {
+    const teddy = document.createElement("div");
+    teddy.className = "teddy hug";
+    teddy.style.left = "50%";
+    teddy.style.transform = "translateX(-50%)";
+    teddy.innerText = "🧸";
+    document.body.appendChild(teddy);
+  }, 1000);
+}
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+.card {
+  background: rgba(0,0,0,0.35);
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  animation: fadeIn 1.5s ease;
+}
+
+h1 {
+  font-size: 2.3rem;
+  margin-bottom: 25px;
+}
+
+button {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.yes {
+  background: #4caf50;
+  color: white;
+}
+
+.no {
+  background: #f44336;
+  color: white;
+}
+
+.shake {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-8px); }
+  100% { transform: translateX(0); }
+}
+
+.teddy {
+  font-size: 6rem;
+  position: absolute;
+  left: -120vw;
+  bottom: 50px;
+  animation: runIn 2.5s forwards;
+}
+
+.banner {
+  background: white;
+  color: #ff4d6d;
+  padding: 8px 18px;
+  border-radius: 15px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+@keyframes runIn {
+  to { left: 50%; transform: translateX(-50%); }
+}
+
+.hug {
+  animation: hug 1s infinite;
+}
+
+@keyframes hug {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.float {
+  position: absolute;
+  top: -50px;
+  font-size: 2rem;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div id="card" class="card">
+  <h1>Will you be my Valentine? ❤️</h1>
+  <button class="yes" onclick="yesClicked()">YES</button>
+  <button class="no" onclick="noClicked()">NO</button>
+</div>
+
+<script>
+function noClicked() {
+  const card = document.getElementById("card");
+  card.classList.add("shake");
+  setTimeout(() => card.classList.remove("shake"), 400);
+
+  if (!document.getElementById("teddyNo")) {
+    const teddy = document.createElement("div");
+    teddy.id = "teddyNo";
+    teddy.className = "teddy";
+    teddy.innerHTML = "🧸<div class='banner'>Wrong Answer</div>";
+    document.body.appendChild(teddy);
+  }
+}
+
+function yesClicked() {
+  document.getElementById("card").innerHTML =
+    "<h1>Yay! Thanks my love ❤️</h1>";
+
+  // Balloons + Flowers
+  const items = ["🎈","🌸","🌹","🌷","💖"];
+  for (let i = 0; i < 40; i++) {
+    const span = document.createElement("span");
+    span.className = "float";
+    span.innerText = items[Math.floor(Math.random()*items.length)];
+    span.style.left = Math.random() * 100 + "vw";
+    span.style.animationDuration = 4 + Math.random()*4 + "s";
+    document.body.appendChild(span);
+  }
+
+  // Hugging Teddy
+  setTimeout(() => {
+    const teddy = document.createElement("div");
+    teddy.className = "teddy hug";
+    teddy.style.left = "50%";
+    teddy.style.transform = "translateX(-50%)";
+    teddy.innerText = "🧸";
+    document.body.appendChild(teddy);
+  }, 1000);
+}
+</script>
+
+</body>
+</html>
